@@ -26,6 +26,8 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
 
+    
+
     respond_to do |format|
       if @student.save
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
@@ -65,10 +67,11 @@ class StudentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_student
       @student = Student.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:name, :standard, :rollno, :email, :phone, :gender, :category, :dob, :address, :high_school, :intermediate, :high_school_year, :inter_school_year, :diploma, :diploma_year, :diploma_percentage, :sem1, :sem2, :sem3, :sem4, :sem5, :sem6, :sem7, :sem8, :average, :backlogs, :percentage_including_diploma, :ct_reference_no, :remarks)
+      params.require(:student).permit(:name, :standard, :rollno, :avatar)
     end
 end

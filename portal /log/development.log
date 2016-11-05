@@ -2912,3 +2912,266 @@ Processing by PhotosController#index as HTML
 Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 1.3ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2492077904828301510);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAttachmentToStudents (20161105061916)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "students" ADD "attachment" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161105061916"]]
+  [1m[35m (29.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2492077904828301510)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'faces'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'photos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+Started GET "/" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (12.2ms)
+  Rendered students/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 240ms (Views: 221.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/faces.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/photos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/scaffolds.self-73734f7d189d7ed1bae556389a2d4c51091d240d0a38cd9d60d3af1110ff00cb.css?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/application.self-af04b226fd7202dfc532ce7aedb95a0128277937e90d3b3a3d35e1cce9e16886.css?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/faces.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/action_cable.self-1641ec3e8ea24ed63601e86efcca7f9266e09f390e82199d56aa7e4bd50e1aa9.js?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/photos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for 127.0.0.1 at 2016-11-05 11:58:08 +0530
+Started GET "/" for 127.0.0.1 at 2016-11-05 12:00:02 +0530
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (5.2ms)
+  Rendered students/new.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    27:   </div>
+    28: 
+    29:   <div class = "well">
+    30:    <%= form_for @pic, html: { multipart: true } do |f| %>
+    31:       
+    32:       <%= f.label :avatar %>
+    33:       <%= f.file_field :avatar %>
+  
+app/views/students/_form.html.erb:30:in `block in _app_views_students__form_html_erb__2214979030810245511_69935798357260'
+app/views/students/_form.html.erb:1:in `_app_views_students__form_html_erb__2214979030810245511_69935798357260'
+app/views/students/new.html.erb:3:in `_app_views_students_new_html_erb__3002665865992483571_69935798262460'
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.1ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.8ms)
+Started GET "/" for 127.0.0.1 at 2016-11-05 12:01:57 +0530
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (4.2ms)
+  Rendered students/new.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing block):
+    27:   </div>
+    28: 
+    29:   <div class = "well">
+    30:    <%= form_for @pic, html: { multipart: true }  %>
+    31:       
+    32:       <%= f.label :avatar %>
+    33:       <%= f.file_field :avatar %>  
+  
+app/views/students/_form.html.erb:30:in `block in _app_views_students__form_html_erb__2214979030810245511_69935795780420'
+app/views/students/_form.html.erb:1:in `_app_views_students__form_html_erb__2214979030810245511_69935795780420'
+app/views/students/new.html.erb:3:in `_app_views_students_new_html_erb__3002665865992483571_69935795536120'
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.0ms)
+Started GET "/" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (4.0ms)
+  Rendered students/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 29ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/photos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/scaffolds.self-73734f7d189d7ed1bae556389a2d4c51091d240d0a38cd9d60d3af1110ff00cb.css?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/faces.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/application.self-af04b226fd7202dfc532ce7aedb95a0128277937e90d3b3a3d35e1cce9e16886.css?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/action_cable.self-1641ec3e8ea24ed63601e86efcca7f9266e09f390e82199d56aa7e4bd50e1aa9.js?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/cable.self-6e0514260c1aa76eaf252412ce74e63f68819fd19bf740595f592c5ba4c36537.js?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/faces.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/photos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/application.self-b89234cf2659d7fedea75bca0b8d231ad7dfc2f3f57fcbaf5f44ed9dc384137b.js?body=1" for 127.0.0.1 at 2016-11-05 12:02:51 +0530
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-11-05 12:02:52 +0530
+Started POST "/students" for 127.0.0.1 at 2016-11-05 12:03:15 +0530
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EE8rO0sLC6T26aKVTgppL7QwUvFq+7ReHLA9JMFeL6RdgRhIFXn+wtbKSqoURGgzi28rIWJP9uSaE6yUIhQzlw==", "student"=>{"name"=>"jvhsj", "rollno"=>"3", "standard"=>"3", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007f36601833a8 @tempfile=#<Tempfile:/tmp/RackMultipart20161105-11763-1w3bu2c.png>, @original_filename="Screenshot from 2016-07-17 17:31:56.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"student[avatar]\"; filename=\"Screenshot from 2016-07-17 17:31:56.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Student"}
+Unpermitted parameter: avatar
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (218.4ms)[0m  [1m[32mINSERT INTO "students" ("name", "rollno", "standard", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "jvhsj"], ["rollno", 3], ["standard", "3"], ["created_at", 2016-11-05 06:33:15 UTC], ["updated_at", 2016-11-05 06:33:15 UTC]]
+  [1m[35m (41.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/students/18
+Completed 302 Found in 267ms (ActiveRecord: 259.7ms)
+
+
+Started GET "/students/18" for 127.0.0.1 at 2016-11-05 12:03:15 +0530
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 82ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-11-05 12:05:38 +0530
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (2.5ms)
+  Rendered students/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/18" for 127.0.0.1 at 2016-11-05 12:05:49 +0530
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    15:   <%= @student.standard %>
+    16: </p>
+    17: 
+    18: <% @student_attachments.each do |p| %>
+    19:   <%= image_tag p.avatar_url %>
+    20:   <%= link_to "Edit Attachment", edit_post_attachment_path(p) %>
+    21: <% end %>
+  
+app/views/students/show.html.erb:18:in `_app_views_students_show_html_erb___2429659116131578118_69935803481000'
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.0ms)
+Started GET "/students/18" for 127.0.0.1 at 2016-11-05 12:06:51 +0530
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `avatar_url' for nil:NilClass):
+    16: </p>
+    17: 
+    18: 
+    19:   <%= image_tag @student_attachments.avatar_url %>
+    20:   <%= link_to "Edit Attachment", edit_post_attachment_path(p) %>
+    21: 
+    22: 
+  
+app/views/students/show.html.erb:19:in `_app_views_students_show_html_erb___2429659116131578118_69935625018480'
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.4ms)
+Started GET "/students/18" for 127.0.0.1 at 2016-11-05 12:07:09 +0530
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `avatar' for nil:NilClass):
+    16: </p>
+    17: 
+    18: 
+    19:   <%= image_tag @student_attachments.avatar %>
+    20:   <%= link_to "Edit Attachment", edit_post_attachment_path(p) %>
+    21: 
+    22: 
+  
+app/views/students/show.html.erb:19:in `_app_views_students_show_html_erb___2429659116131578118_69935791418340'
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.0ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home/lalit/.rvm/gems/ruby-2.3.1@cse17/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.6ms)
