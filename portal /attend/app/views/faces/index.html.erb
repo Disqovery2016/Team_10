@@ -1,0 +1,22 @@
+<%= flash[:notice] %>
+<table>
+  <thead>
+    <tr>
+      <th>Total Present</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @faces.each do |face| %>
+      <tr>
+        <td><%= face.total_present %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>
+<h3>Import a CSV File</h3>
+  <%= form_tag import_faces_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>
+</div>

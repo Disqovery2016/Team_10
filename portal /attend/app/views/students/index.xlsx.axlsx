@@ -1,0 +1,11 @@
+wb = xlsx_package.workbook
+wb.styles do |style|
+  highlight_cell = style.add_style(bg_color: "EFC376")
+
+	wb.add_worksheet(name: "Students") do |sheet|
+		sheet.add_row ["name", "rollno", "standard"]
+			@students.each do |student|
+    			sheet.add_row [student.name, student.rollno, student.standard]
+  			end
+	end
+end	
